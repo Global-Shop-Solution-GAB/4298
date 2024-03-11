@@ -1,0 +1,71 @@
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+v.Local.sSQL.Declare(String) 
+v.Local.sCust.Declare(String)
+Function.Intrinsic.Control.If(v.Caller.Hook,=,"11560","OR",v.Caller.Hook,=,"11565")
+	v.Local.sCust.Set(v.Passed.000006)
+	F.ODBC.Connection!conX.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass) 
+	F.Intrinsic.String.Build("Select UF2 From CRM_UF_Value Where COMPID = '{0}' And Type = '15' And COMPTYPE = '15'",v.Local.sCust,v.Local.sSQL) 	
+	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",v.Local.sSQL) 
+	F.Intrinsic.Control.If(v.ODBC.conX!rst.EOF,=,False)
+		F.Intrinsic.Control.If(v.ODBC.conX!rst.FieldValTrim!UF2,=,"PROJECT EPC") 
+		
+			'header of order. 
+			
+			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"Hide",0)
+			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"LOCK",0)
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PL",497) 
+			
+			'vertical pos
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PT",540) 
+			'width
+			f.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PW",375)
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","BC",v.Color.yellow) 
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","FC",v.Color.Red) 
+	
+			v.Passed.GAB-Text-1.Set("***Commercial Account***    Always Use Commercial Product Line")
+			v.Passed.Global.Set("PROJECT EPC")	
+		Function.Intrinsic.Control.Else
+			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"Hide",1)
+			v.Passed.GAB-Text-1.Set("")
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","BC",v.Color.gss) 
+			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","FC",v.Color.gss) 
+			v.Passed.Global.Set("")
+		f.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.EndIf
+	f.ODBC.conX!rst.Close
+	f.ODBC.Connection!conX.Close 
+	v.Passed.000111.Set("Account Manager")
+F.Intrinsic.Control.ElseIf(v.Caller.Hook,=,"12010") 
+	'lines load	
+	Function.Intrinsic.Control.If(v.Passed.global,=,"PROJECT EPC")
+		v.Passed.GAB-Memo-1.Set("              ***Commercial Account***            Always Use Commercial Product Line")
+		
+			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-Memo-1,"Hide",0)
+			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-Memo-1,"LOCK",0)
+			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","PL",260) 
+			
+			'vertical pos
+			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","PT",210) 
+			'width
+			f.Intrinsic.Variable.SetProperty("GAB-Memo-1","PW",250)
+			'height
+			f.Intrinsic.Variable.SetProperty("GAB-Memo-1","PH",30)
+			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","BC",v.Color.yellow) 
+			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","FC",v.Color.Red) 
+			F.Intrinsic.Variable.SetProperty("000013","BC",v.Color.yellow)			
+			F.Intrinsic.Variable.SetProperty("000013","FC",v.Color.Red) 
+	Function.Intrinsic.Control.EndIf
+	'Consolidated from another project.
+	V.Passed.000162.Set("Pack Sizes")
+Function.Intrinsic.Control.EndIf 
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$TRT$}$11/29/2016 2:25:01 PM$}$False
+Program.Sub.Comments.End
