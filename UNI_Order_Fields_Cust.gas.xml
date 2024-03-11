@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Pages>
+    <DefaultPage>
+      <Header />
+      <Footer />
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>66</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>2</Height>
+      </Size>
+      <X>0</X>
+      <Y>66</Y>
+      <Width>24</Width>
+      <Height>2</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+  </Selection>
+  <Gutter>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator />
+  <Printing>
+    <Footer />
+    <Header />
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>66</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.Preflight.Start</string>
+        <string />
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>v.Local.sSQL.Declare(String) </string>
+        <string>v.Local.sCust.Declare(String)</string>
+        <string>Function.Intrinsic.Control.If(v.Caller.Hook,=,"11560","OR",v.Caller.Hook,=,"11565")</string>
+        <string>	v.Local.sCust.Set(v.Passed.000006)</string>
+        <string>	F.ODBC.Connection!conX.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass) </string>
+        <string>	F.Intrinsic.String.Build("Select UF2 From CRM_UF_Value Where COMPID = '{0}' And Type = '15' And COMPTYPE = '15'",v.Local.sCust,v.Local.sSQL) 	</string>
+        <string>	F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst",v.Local.sSQL) </string>
+        <string>	F.Intrinsic.Control.If(v.ODBC.conX!rst.EOF,=,False)</string>
+        <string>		F.Intrinsic.Control.If(v.ODBC.conX!rst.FieldValTrim!UF2,=,"PROJECT EPC") </string>
+        <string>		</string>
+        <string>			'header of order. </string>
+        <string>			</string>
+        <string>			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"Hide",0)</string>
+        <string>			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"LOCK",0)</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PL",497) </string>
+        <string>			</string>
+        <string>			'vertical pos</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PT",540) </string>
+        <string>			'width</string>
+        <string>			f.Intrinsic.Variable.SetProperty("GAB-TEXT-1","PW",375)</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","BC",v.Color.yellow) </string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","FC",v.Color.Red) </string>
+        <string>	</string>
+        <string>			v.Passed.GAB-Text-1.Set("***Commercial Account***    Always Use Commercial Product Line")</string>
+        <string>			v.Passed.Global.Set("PROJECT EPC")	</string>
+        <string>		Function.Intrinsic.Control.Else</string>
+        <string>			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-TEXT-1,"Hide",1)</string>
+        <string>			v.Passed.GAB-Text-1.Set("")</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","BC",v.Color.gss) </string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-TEXT-1","FC",v.Color.gss) </string>
+        <string>			v.Passed.Global.Set("")</string>
+        <string>		f.Intrinsic.Control.EndIf</string>
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>	f.ODBC.conX!rst.Close</string>
+        <string>	f.ODBC.Connection!conX.Close </string>
+        <string>	v.Passed.000111.Set("Account Manager")</string>
+        <string>F.Intrinsic.Control.ElseIf(v.Caller.Hook,=,"12010") </string>
+        <string>	'lines load	</string>
+        <string>	Function.Intrinsic.Control.If(v.Passed.global,=,"PROJECT EPC")</string>
+        <string>		v.Passed.GAB-Memo-1.Set("              ***Commercial Account***            Always Use Commercial Product Line")</string>
+        <string>		</string>
+        <string>			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-Memo-1,"Hide",0)</string>
+        <string>			F.Intrinsic.UI.ChangeCallerProperty(v.Passed.GAB-Memo-1,"LOCK",0)</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","PL",260) </string>
+        <string>			</string>
+        <string>			'vertical pos</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","PT",210) </string>
+        <string>			'width</string>
+        <string>			f.Intrinsic.Variable.SetProperty("GAB-Memo-1","PW",250)</string>
+        <string>			'height</string>
+        <string>			f.Intrinsic.Variable.SetProperty("GAB-Memo-1","PH",30)</string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","BC",v.Color.yellow) </string>
+        <string>			F.Intrinsic.Variable.SetProperty("GAB-Memo-1","FC",v.Color.Red) </string>
+        <string>			F.Intrinsic.Variable.SetProperty("000013","BC",v.Color.yellow)			</string>
+        <string>			F.Intrinsic.Variable.SetProperty("000013","FC",v.Color.Red) </string>
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>Function.Intrinsic.Control.EndIf </string>
+        <string />
+        <string />
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$$}$TRT$}$11/29/2016 2:25:01 PM$}$False</string>
+        <string>Program.Sub.Comments.End</string>
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>10</WindowOriginY>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>2</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>4</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>64</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>66</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>68</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
