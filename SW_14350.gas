@@ -1,0 +1,17 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Variable.Local.sUserGroups.Declare(String)
+Variable.Local.bChk.Declare(Boolean)
+Variable.passed.000123.set("Salesforce.com ID")
+Variable.passed.000116.set("Active/ InActive")
+Variable.passed.000113.set("Account Manager")
+
+Program.Sub.Main.end
+
+
